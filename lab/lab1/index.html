@@ -8,20 +8,50 @@
     <link rel="stylesheet" href="css/leaflet.css" />
     <!-- Choose a frontend framework CSS file: -->
     <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
-    <!-- <link rel="stylesheet" href="css/material.css" /> -->
+    <link rel="stylesheet" href="css/material.css" />
     <!-- <link rel="stylesheet" href="css/assembly.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Side-most bar -->
+    <div class="sidesidebar">
+      <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+          <div class="mdl-layout__drawer">
+            <br>
+            <span class="mdl-layout-title"><img src="cart.png"></span>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href=""><img src="manu.png" class="smallicon"> Manufacturers</a>
+              <a class="mdl-navigation__link" href=""><img src="purchase.png" class="smallicon"> Purchases</a>
+              <a class="mdl-navigation__link" href=""><img src="secret.png" class="smallicon"> Basket Secrets</a>
+            </nav>
+          </div>
+      </div>
+
+    </div>
     <!-- Sidebar -->
     <div class="sidebar">
       <nav class="navbar navbar-default">
         <div class="container-fluid clearfix">
           <div class="topright-button" style="float: right">
-            [Add New]
+            <!-- Colored FAB button with ripple -->
+            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+              <i class="icon material-icons" id="tt1">+</i>
+              <div class="mdl-tooltip" data-mdl-for="tt1">Add New</div> <!--Tooltip-->
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for="demo-menu-lower-right">
+              <li class="mdl-menu__item">View History</li>
+              <li class="mdl-menu__item">Email All Manufacturers</li>
+            </ul>
+
           </div>
           <div class="navbar-header">
-            <a href="#">Manufacturers</a>
+            <h1 class="item-heading"> Manufacturers</h1>
+            <form>
+              <input type="text" placeholder="Search...">
+              <input type="button" value="Search">
+            </form>
           </div>
         </div>
       </nav>
@@ -29,6 +59,70 @@
         <h2 class="item-heading">Tandy’s Basketweavers</h2>
         <div>490 Freedom Drive<br>
         Philadelphia, PA 19425</div>
+        <!-- Accent-colored raised button with ripple -->
+        <button id="makesmall" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent dialog-button">
+          Low Inventory
+        </button>
+        <div class="mdl-tooltip" data-mdl-for="makesmall">CLICK FOR DETAILS</div> <!--Tooltip-->
+
+        <dialog id="dialog" class="mdl-dialog">
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--9-col">Manufacturer</div>
+            <div class="mdl-cell mdl-cell--3-col">
+            <div class="mdl-dialog__actions">
+              <button type="button" class="mdl-button">X</button>
+            </div>
+            </div>
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--7-col"><h5>Tandy's Basketweavers</h5></div>
+            <div class="mdl-cell mdl-cell--5-col">
+              <button class="mdl-button mdl-button--raised mdl-js-ripple-effect">
+                Edit
+              </button>
+              <button class="mdl-button mdl-button--raised mdl-js-ripple-effect">
+                Export
+              </button>
+            </div>
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">
+              <b>Address</b>
+              <br>490 Freedom Drive
+              <br>Philadelphia, PA 19425
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <b>Contact</b>
+              <br>Jack Jill
+              <br>(123)-123-1234
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <b>Sales</b>
+              <br>324 baskets in last 3 days
+            </div>
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col"><b>Sales</b></div>
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col"><b>First Name</b></div>
+            <div class="mdl-cell mdl-cell--4-col"><b>Last Name</b></div>
+            <div class="mdl-cell mdl-cell--4-col"><b>Purchase</b></div>
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">Elmo</b></div>
+            <div class="mdl-cell mdl-cell--4-col">Oscar</div>
+            <div class="mdl-cell mdl-cell--4-col">Fruit Basket</div>
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">Bernie</div>
+            <div class="mdl-cell mdl-cell--4-col">Natasha</div>
+            <div class="mdl-cell mdl-cell--4-col">Easter Basket</div>
+          </div>
+
+        </dialog>
+
       </div>
       <div class="item">
         <h2 class="item-heading">Basket Case</h2>
@@ -59,9 +153,10 @@
     <!-- Javascript Imports -->
     <script src="js/jquery-2.2.0.js"></script>
     <script src="js/leaflet.js"></script>
+    <script src="js/main.js"></script>
     <!-- Choose a frontend framework Javascript file: -->
     <!-- <script src="js/bootstrap.js"></script> -->
-    <!-- <script src="js/material.js"></script> -->
+    <script src="js/material.js"></script>
     <!-- <script src="js/assembly.js"></script>  -->
     <script src="js/setup.js"></script>
   </body>
